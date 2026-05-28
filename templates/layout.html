@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <meta charset="utf-8"/>
+    <title>{%block title%} {% endblock%}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<body>
+    <div id="container">
+        <header>
+             
+        </header>
+
+
+        <nav>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-filter"></i>
+            {% block menu %} {% endblock %}
+        </nav>
+
+        <section id="contenido">
+            <article class="article"> 
+                {% block article1 %} 
+                {% endblock %}
+            </article>
+
+            <article class="article"> 
+                {% block article2 %} 
+                {% endblock %}
+            </article>
+        </section>
+    </div>
+</body>
+</html>
