@@ -1,0 +1,22 @@
+.article{
+    border: 1px solid black;
+    padding: 30px;
+    max-width: 40%;
+    margin: 25px;
+   
+    
+}
+.article h1 {
+    padding: 10px;
+}
+.article h3 {
+    padding: 10px;;
+}
+.article p {
+    padding: 10px;
+}
+.article li {
+    padding: 10px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+}

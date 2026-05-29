@@ -4,32 +4,27 @@
     <meta charset="utf-8"/>
     <title>{%block title%} {% endblock%}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/layout.css')}}"/>
+    {% block css %}  {% endblock %}
 </head>
 
 
-<body>
-    <div id="container">
-        <header>
-             
+<body id="body">
+     <header>
+            <a class="enlace" href="pagina horarios.html"> HODEFES</a>
         </header>
-
-
         <nav>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-filter"></i>
-            {% block menu %} {% endblock %}
+            <form> 
+                {% block menu %} {% endblock %}
+                <i class="fa-solid fa-filter"></i> 
+                <input type="text"/>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
         </nav>
-
+    <div id="container">
         <section id="contenido">
-            <article class="article"> 
-                {% block article1 %} 
-                {% endblock %}
-            </article>
-
-            <article class="article"> 
-                {% block article2 %} 
-                {% endblock %}
-            </article>
+            {% block articles %}
+            {% endblock %}
         </section>
     </div>
 </body>
