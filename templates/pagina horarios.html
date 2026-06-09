@@ -1,77 +1,46 @@
-{%extends './layout.html' %}
+<!DOCTYPE html>
+<html> 
+<head> 
+    <meta charset="utf-8"/>
+    <title>HODEFES ඞ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/pagina horarios.css')}}"/>
+</head>
+
+<body id="body">
+     <header>
+            <a class="enlace" href="http://127.0.0.1:5000/pagina_horarios/"> HODEFES</a>
+        </header>
+        <nav>
+            <form> 
+                <i class="fa-solid fa-filter"></i> 
+                <input type="text"/>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
+        </nav>
+    <div id="container">
+        <section id="contenido">
+
+            <div class="horarios">
+                {% for profesor in datos %}
+                    <article class="article"> 
+                        <h1> {{profesor.nombre}} </h1>
+                        <h3> Lugares donde se puede encontrar</h3>
+                        <p> {{profesor.lugar}} </p>
+                        <h3>  Horarios  </h3>
+                            <ul>
+                                <li> {{profesor.horario}} </li>
+                            </ul>
+                        <i class="fa-solid fa-circle"></i>
+                        <i class="fa-regular fa-circle"></i> 
+                        <a href={{profesor.pdf}} >PDF</a>
+                        <button type="button"> Sistema de consulta</button>          
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</body>
+</html>
 
 
-{% block title %} HODEFES ඞ{% endblock %}
-{% block css %}
-<link rel="stylesheet" href="{{url_for('static',filename='css/pagina horarios.css')}}"/>
-{%endblock%}
-bootstrap, usar archivos para no ocupar base de datos, (csv - command seperated values)
-
-json
-
-
-
-{% block articles %} 
-<div class="horarios">
-    <article class="article"> 
-        <h1> Javiera Palacios </h1>
-        <h3> Lugares donde se puede encontrar</h3>
-        <p> La oficina 202 ubicada arriba de la biblioteca </p>
-        <h3>  Horarios  </h3>
-            <ul>
-                <li> 13:00 - 14:00 </li>
-            </ul>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-regular fa-circle"></i> 
-        <a href="https://horarios.ulagos.cl/ptomontt/docentes.php">PDF</a>
-        <button type="button"> Sistema de consulta</button>          
-    </article>
-</div>
-<div class="horarios">
-    <article class="article">
-    <h1> Alejandro Segovia </h1>
-        <h3> Lugares donde se puede encontrar</h3>
-        <p>La oficina ubicada arriba de la sala de estudio circular</p>
-        <h3>  Horarios  </h3>
-            <ul>
-                <li> 16:00 - 16:30 </li>
-            </ul>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-regular fa-circle"></i> 
-        <a href="https://horarios.ulagos.cl/Global/index.php?docente=12309317&sede=2028">PDF</a>
-        <button type="button"> Sistema de consulta</button>
-    </article>
-</div>
-<div class="horarios">
-    <article class="article">
-    <h1> Pepe Rojas </h1>
-    <button type="button"> Part-time </button>
-        <h3> Lugares donde se puede encontrar</h3>
-        <p> En las salas que está haciendo clases </p>
-        <h3>  Horarios  </h3>
-            <ul>
-                <li> Solo despues de clases </li>
-            </ul>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-regular fa-circle"></i> 
-        <a href="https://horarios.ulagos.cl/ptomontt/docentes.php">PDF</a>
-        <button type="button"> Sistema de consulta</button>
-    </article>
-</div>
-<div class="horarios">
-    <article class="article">
-    <h1> Gilberto Diaz </h1>
-    <button class="part-time" type="button"> Part-time </button>
-        <h3> Lugares donde se puede encontrar</h3>
-        <p> En las salas que está haciendo clases </p>
-        <h3>  Horarios  </h3>
-            <ul>
-                <li> Solo despues de clases </li>
-            </ul>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-regular fa-circle"></i> 
-        <a href="https://horarios.ulagos.cl/ptomontt/docentes.php">PDF</a>
-        <button type="button"> Sistema de consulta</button>
-    </article>
-</div>
-{% endblock %}

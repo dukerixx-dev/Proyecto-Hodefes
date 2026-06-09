@@ -1,76 +1,88 @@
-{%extends './layout.html' %}
-{% block title %} HODEFES {% endblock %}
-{% block css %}
-<link rel="stylesheet" href="{{url_for('static',filename='css/pagina docentes.css')}}"/>
-{%endblock%}
+<!DOCTYPE html>
+<html> 
+<head> 
+    <meta charset="utf-8"/>
+    <title> HODEFES Docentes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/pagina docentes.css')}}"/>
+</head>
+<body id="body">
+     <header>
+            <a class="enlace" href="http://127.0.0.1:5000/pagina_horarios/"> HODEFES</a>
+        </header>
+        <nav>
+            <form> 
+                <i class="fa-solid fa-toggle-off"></i>
+                <!--i class="fa-solid fa-toggle-on"></i>-->
+                <i class="fa-solid fa-filter"></i> 
+                <input type="text"/>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
+        </nav>
+    <div id="container">
+        <section id="contenido">
+            <div>
+                <h1> Tickets Pendientes </h1>
 
-{% block menu %} 
-    <i class="fa-solid fa-toggle-off"></i>
-    <!--i class="fa-solid fa-toggle-on"></i>-->
-{% endblock %}
+                <article class="article"> 
+                    <h3> Tadeo Diaz </h3>
+                    <h3>  Ing. civil informatica  </h3>
+                    <h4> 22/05 </h4>
+                    <h3> Duda </h3>
+                    Hola profe queria saber si puedo ocupar booleanos en el practico del viernes.
+                </article>
 
+            <article class="article"> 
+                    <h3> Tobias Kennedy </h3>
+                    <h3> Ing. civil </h3>
+                    <h4> 28/05 </h4>
+                    <h3> Duda </h3>
+                    Buenos dias profe tengo una duda con el envio del trabajo, nos dijo que ademas de entregarlo habia que hacerlo con un informe, pero en la pauta del proyecto no se menciona y ni especifica que contenidos debe de tener :c.
+                </article>
+                
+                <article class="article"> 
+                    <h3> Pedro Zanhuesa </h3>
+                    <h3> Ing. civil eléctrica </h3>
+                    <h4> 24/05 </h4>
+                    <h3> Reunion breve </h3>
+                    Hola profe tengo una duda sobre nuestro proyecto y seria mejor explicarlo si usted lo viera presencialmente.
+                </article>
+            </div>
 
-{% block articles %}
-<div>
-    <h1> Tickets Pendientes </h1>
+            <div>
+                <h1> Tickets Respondidos </h1>
+                <article class="article"> 
+                    <h3> Angela Soto</h3>
+                    <h3>  Ing. civil informatica  </h3>
+                    <h4> 20/05 </h4>
+                    <h3> Reunion breve </h3>
+                        Buenos dias profesor, me gustaria consultarle sobre mi nota del código del proyecto presencialmente si es es posible.
+                    <h3> Respuesta </h3>
+                        Okey, a las 13:15 en el laboratorio de informatica.
+                </article>
 
-    <article class="article"> 
-        <h3> Tadeo Diaz </h3>
-        <h3>  Ing. civil informatica  </h3>
-        <h4> 22/05 </h4>
-        <h3> Duda </h3>
-        Hola profe queria saber si puedo ocupar booleanos en el practico del viernes.
-    </article>
+                <article class="article"> 
+                    <h3> Antonela White </h3>
+                    <h3> Ing. civil informatica </h3>
+                    <h4> 22/05 </h4>
+                    <h3> Duda </h3>
+                        Hola profesor,  se puede realizar la presentacion sin Latex?
+                    <h3> Respuesta </h3>
+                        La presentacion tiene que hacerse con latex, lo mismo con el poster y el informe.
+                </article>
 
-<article class="article"> 
-        <h3> Tobias Kennedy </h3>
-        <h3> Ing. civil </h3>
-        <h4> 28/05 </h4>
-        <h3> Duda </h3>
-        Buenos dias profe tengo una duda con el envio del trabajo, nos dijo que ademas de entregarlo habia que hacerlo con un informe, pero en la pauta del proyecto no se menciona y ni especifica que contenidos debe de tener :c.
-    </article>
-    
-    <article class="article"> 
-        <h3> Pedro Zanhuesa </h3>
-        <h3> Ing. civil eléctrica </h3>
-        <h4> 24/05 </h4>
-        <h3> Reunion breve </h3>
-        Hola profe tengo una duda sobre nuestro proyecto y seria mejor explicarlo si usted lo viera presencialmente.
-    </article>
-</div>
-
-
-<div>
-    <h1> Tickets Respondidos </h1>
-    <article class="article"> 
-        <h3> Angela Soto</h3>
-        <h3>  Ing. civil informatica  </h3>
-        <h4> 20/05 </h4>
-        <h3> Reunion breve </h3>
-            Buenos dias profesor, me gustaria consultarle sobre mi nota del código del proyecto presencialmente si es es posible.
-        <h3> Respuesta </h3>
-            Okey, a las 13:15 en el laboratorio de informatica.
-    </article>
-
-    <article class="article"> 
-        <h3> Antonela White </h3>
-        <h3> Ing. civil informatica </h3>
-        <h4> 22/05 </h4>
-        <h3> Duda </h3>
-            Hola profesor,  se puede realizar la presentacion sin Latex?
-        <h3> Respuesta </h3>
-            La presentacion tiene que hacerse con latex, lo mismo con el poster y el informe.
-    </article>
-
-    <article class="article"> 
-        <h3> Felipe Anderson</h3>
-        <h3>  Ing. civil industrial  </h3>
-        <h4> 26/05 </h4>
-        <h3> Duda </h3>
-            Buenas tardes profe, ¿en la prueba del lunes de matemáticas entra sistema de ecuaciones?.
-        <h3> Respuesta </h3>
-            si, si entra.
-    </article>
-    
-</div>
-{% endblock %}
+                <article class="article"> 
+                    <h3> Felipe Anderson</h3>
+                    <h3>  Ing. civil industrial  </h3>
+                    <h4> 26/05 </h4>
+                    <h3> Duda </h3>
+                        Buenas tardes profe, ¿en la prueba del lunes de matemáticas entra sistema de ecuaciones?.
+                    <h3> Respuesta </h3>
+                        si, si entra.
+                </article>
+                
+            </div>
+        </section>
+    </div>
+</body>
+</html>

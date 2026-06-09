@@ -8,10 +8,16 @@ def inicio_sesion():
         
     return render_template('pagina inicio sesion.html')
 
+
+#def contenido_horarios():
+
+
 @app.route('/pagina_horarios/')
 def pagina_horarios():
-
-    return render_template('pagina horarios.html')
+    #el profe lucas sugiere hacer otra funcion que busque o filtre a un diccionario especifico que serian los profesores en el json para colocarlo en el html
+    with open("profes.json","r") as archivo:
+        profes=json.load(archivo)
+    return render_template('pagina horarios.html',datos=profes)
 
 
 @app.route('/pagina_docentes/')
