@@ -1,0 +1,17 @@
+[
+    {
+        "correo": "pepe.torres@alumnos.ulagos.cl",
+        "contrasena":"1234"
+    },
+    
+    {
+        "correo": "lucas.almonacid@ulagos.cl",
+        "contrasena": "1234"
+    },
+
+    { 
+        "correo": "admin.@ulagos.cl",
+        "contrasena": "1234"
+
+    }
+]

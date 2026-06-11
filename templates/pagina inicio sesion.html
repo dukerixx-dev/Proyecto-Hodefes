@@ -14,14 +14,14 @@
   </header>
 
   <div class="contenedor">
-    <form>
+    <form action="/login" method="POST">
       <h2>Ingresar datos</h2>
 
       <h3>Ingrese su correo electrónico</h3>
-      <input type="email" placeholder="nombre.apellido@universidad.cl">
+      <input type="email" placeholder="nombre.apellido@universidad.cl" name="correo">
 
       <h3>Ingrese su contraseña</h3>
-      <input type="password" placeholder="••••••••">
+      <input type="password" placeholder="••••••••" name="contraseña">
 
       <input type="submit" value="Iniciar sesión">
     </form>
