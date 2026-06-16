@@ -34,7 +34,10 @@
                         <i class="fa-solid fa-circle"></i>
                         <i class="fa-regular fa-circle"></i> 
                         <a href={{profesor.pdf}} >PDF</a>
-                        <button type="button"> Sistema de consulta</button>  
+                        <a href="{{url_for('inicio_de_sesion')}}">    
+                            <button type="button"> Sistema de consulta</button>  
+                        </a>
+
                     </article>
                 {% endfor %}
             </div>
@@ -42,5 +45,4 @@
     </div>
 </body>
 </html>
-
 

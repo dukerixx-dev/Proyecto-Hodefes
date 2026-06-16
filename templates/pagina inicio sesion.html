@@ -26,10 +26,12 @@
       <input type="submit" value="Iniciar sesión">
     </form>
 
-    <aside>
+    <aside action="login" method="POST">
       <h3>En caso de ser invitado presione el botón de abajo</h3>
       <p>(Esto excluirá el acceso a ciertas opciones)</p>
-      <input type="submit" value="Entrar como invitado">
+      <a href="{{url_for('invitado')}}"> 
+        <button> Invitado </button>
+      </a>
     </aside>
 
     <footer>
