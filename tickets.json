@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "estudiante": "pepe.torres",
+        "docente": "Hector Villarroel",
+        "tipo": "ticket duda",
+        "contenido": "heloooo",
+        "respuesta": "",
+        "estado": "pendiente"
+    },
+    {
+        "id": 2,
+        "estudiante": "pepe.torres",
+        "docente": "Javiera Palacios",
+        "tipo": "ticket presencial",
+        "contenido": "",
+        "respuesta": "",
+        "estado": "pendiente"
+    }
+]
