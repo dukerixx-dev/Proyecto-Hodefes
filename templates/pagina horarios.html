@@ -45,6 +45,15 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </form>
         </nav>
+        {% with mensajes = get_flashed_messages() %}
+            {% if mensajes %}
+                <div id="modal-exito" class="modal">
+                    <div class="modal-contenido">
+                        <p>{{ mensajes[0] }}</p>
+                    </div>
+                </div>
+            {% endif %}
+        {% endwith %}
     <div id="container">
         <!--cuadros de informacion de los docentes -->
         <section id="contenido">
@@ -90,17 +99,33 @@
 
                                 <!-- mostrar tickets enviados y respondidos-->
                                 <h2> Tickets enviados </h2>
-                                    <h4> Pendientes: </h4>
-                                    <!-- para despues-->
-                                    <h4> Respondidos: </h4>
-                                    <!-- para despues-->
+                                    <h3> Pendientes: </h3>
+                                    {% for ticket in Tickets %}
+                                        {% if ticket.estudiante == usuario and ticket.docente == profesor.nombre and ticket.estado == "pendiente" %}
+                                            <h4> {{ ticket.estudiante }} </h4>
+                                            <h4> {{ ticket.carrera }} </h4>
+                                            <h4> {{ ticket.tipo }} </h4>
+                                            <p> {{ticket.contenido}} </p>
+                                        {% endif %}
+                                    {% endfor %}
+                                    <h3> Respondidos: </h3>
+                                    {% for ticket in Tickets %}
+                                        {% if ticket.estudiante == usuario and ticket.docente == profesor.nombre and ticket.estado == "respondido" %}
+                                            <h2> {{ ticket.estudiante }} </h2>
+                                            <h4> {{ ticket.carrera }} </h4>
+                                            <h4> {{ ticket.tipo }} </h4>
+                                            <p> {{ticket.contenido}} </p>
+                                            <p> {{ticket.respuesta}} </p>
+                                        {% endif %}
+                                    {% endfor %}
                             </div>
                         </div>
                     </article>
                 {% endfor %}
             </div>
-            
-        <script>
+        </section>
+    </div>
+    <script>
             function abrirmodal(id){
                 document.getElementById("modal-"+id).style.display = "block";
 
@@ -118,9 +143,13 @@
                     contenido.style.display = "block";
                 }
             }
-        </script>
-        </section>
-    </div>
+            setTimeout(() => {
+                const modal = document.getElementById("modal-exito");
+                if(modal){
+                    modal.style.display = "none";
+                }
+            }, 2000);
+    </script>
 </body>
 </html>
 

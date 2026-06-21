@@ -38,6 +38,15 @@
     <header>
         <a class="enlace" href="http://127.0.0.1:5000/pagina_horarios/"> HODEFES</a>
     </header>
+    {% with mensajes = get_flashed_messages() %}
+        {% if mensajes %}
+            <div id="modal-exito" class="modal">
+                <div class="modal-contenido">
+                    <p>{{ mensajes[0] }}</p>
+                </div>
+            </div>
+        {% endif %}
+    {% endwith %}
     <div id="container">
         <section id="contenido">
             <h1> Tickets Pendientes </h1>
@@ -60,8 +69,7 @@
                             <h4> {{ ticket.carrera }} </h4>
                             <h4> {{ ticket.tipo }} </h4>
                             <p> {{ticket.contenido}} </p>
-                            <p> {{ticket.id}} </p>
-                            <form action="/responder_ticket/{{ticket.id}}" method="POST">
+                            <form action="/responder_ticket/{{carrera}}/{{usuario}}/{{ticket.id}}" method="POST">
                                 <input type="hidden" name="id" id="ticketId">
                                 <textarea name="respuesta"></textarea>
                                 <button type="submit" name="coordinar_reunion">
@@ -114,6 +122,12 @@
             function cerrarmodal(id){
                 document.getElementById("modal-"+id).style.display = "none";
             }
+            setTimeout(() => {
+                const modal = document.getElementById("modal-exito");
+                if(modal){
+                    modal.style.display = "none";
+                }
+            }, 2000);
         </script>
         </section>
     </div>

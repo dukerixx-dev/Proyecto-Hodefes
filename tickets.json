@@ -6,27 +6,87 @@
         "carrera": "Ingenieria Civil Industrial",
         "tipo": "Presencial",
         "contenido": "",
-        "respuesta": "",
-        "estado": "pendiente"
+        "respuesta": "ok ,a las 6:07 pm",
+        "estado": "respondido"
     },
     {
         "id": 2,
         "estudiante": "Carl Johnson",
         "docente": "Joaquin Reyes",
         "carrera": "Ingenieria Civil en Inform\u00c3\u00a1tica",
-        "tipo": "Duda",
-        "contenido": "holaaa",
+        "tipo": "Presencial",
+        "contenido": "",
         "respuesta": "",
-        "estado": "pendiente"
+        "estado": "respondido"
     },
     {
         "id": 3,
         "estudiante": "Carl Johnson",
-        "docente": "Pepe Rojaz",
+        "docente": "Joaquin Reyes",
         "carrera": "Ingenieria Civil en Inform\u00c3\u00a1tica",
         "tipo": "Duda",
-        "contenido": "prueba del modal",
-        "respuesta": "prueba de respuesta otra vez",
+        "contenido": "helooo",
+        "respuesta": "",
+        "estado": "respondido"
+    },
+    {
+        "id": 4,
+        "estudiante": "Carl Johnson",
+        "docente": "Joaquin Reyes",
+        "carrera": "Ingenieria Civil en Inform\u00c3\u00a1tica",
+        "tipo": "Duda",
+        "contenido": "helooo",
+        "respuesta": "",
+        "estado": "respondido"
+    },
+    {
+        "id": 5,
+        "estudiante": "Carl Johnson",
+        "docente": "Joaquin Reyes",
+        "carrera": "Ingenieria Civil en Inform\u00c3\u00a1tica",
+        "tipo": "Duda",
+        "contenido": "helooo",
+        "respuesta": "",
+        "estado": "respondido"
+    },
+    {
+        "id": 6,
+        "estudiante": "Carl Johnson",
+        "docente": "Joaquin Reyes",
+        "carrera": "Ingenieria Civil en Inform\u00c3\u00a1tica",
+        "tipo": "Duda",
+        "contenido": "helooo",
+        "respuesta": "",
+        "estado": "respondido"
+    },
+    {
+        "id": 7,
+        "estudiante": "Carl Johnson",
+        "docente": "Joaquin Reyes",
+        "carrera": "Ingenieria Civil en Inform\u00c3\u00a1tica",
+        "tipo": "Presencial",
+        "contenido": "",
+        "respuesta": "",
+        "estado": "respondido"
+    },
+    {
+        "id": 8,
+        "estudiante": "Pepe Torres",
+        "docente": "Joaquin Reyes",
+        "carrera": "Ingenieria Civil Industrial",
+        "tipo": "Presencial",
+        "contenido": "",
+        "respuesta": "",
+        "estado": "pendiente"
+    },
+    {
+        "id": 9,
+        "estudiante": "Pepe Torres",
+        "docente": "Joaquin Reyes",
+        "carrera": "Ingenieria Civil Industrial",
+        "tipo": "Presencial",
+        "contenido": "",
+        "respuesta": "",
         "estado": "respondido"
     }
 ]

@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import json
 
 app=Flask(__name__)
+app.secret_key = "clave"
 
 """
 DEBE DE ESTAR DOCUMENTADO
@@ -35,7 +36,10 @@ def verificar_inicio_de_sesion():
 def pagina_horarios(carrera,usuario):
     with open("profes.json","r") as archivo:
         profes=json.load(archivo)
-    return render_template('pagina horarios.html',profes=profes,usuario=usuario,carrera=carrera)
+    with open("tickets.json","r") as archivo:
+        Tickets=json.load(archivo)
+
+    return render_template('pagina horarios.html',profes=profes,usuario=usuario,carrera=carrera, Tickets=Tickets)
 
 @app.route('/enviar_ticket/<carrera>/<usuario>/<docente>', methods=["POST"])
 def enviar_ticket(carrera,usuario,docente):
@@ -59,7 +63,9 @@ def enviar_ticket(carrera,usuario,docente):
     print(nuevo_ticket["id"], " ", nuevo_ticket["estudiante"], " ", nuevo_ticket["tipo"], " ", nuevo_ticket["docente"], " ",nuevo_ticket["contenido"]  )
     with open("tickets.json","w") as archivo:
         json.dump(Tickets,archivo,indent=4)
-    return "hola"
+
+    flash("La solicitud ha sido enviada!")
+    return redirect(f'/pagina_horarios/{carrera}/{usuario}')
 
 @app.route("/pagina_horarios/invitado")    
 def invitado():
@@ -73,10 +79,10 @@ def invitado():
 def pagina_docentes(carrera,usuario):
     with open("tickets.json","r") as archivo:
         Tickets=json.load(archivo)
-    return render_template('pagina docentes.html', Tickets=Tickets, usuario=usuario)
+    return render_template('pagina docentes.html', Tickets=Tickets, carrera=carrera, usuario=usuario)
 
-@app.route('/responder_ticket/<int:ticket_id>', methods=["POST"])
-def responder_ticket(ticket_id):
+@app.route('/responder_ticket/<carrera>/<usuario>/<int:ticket_id>', methods=["POST"])
+def responder_ticket(carrera,usuario,ticket_id):
     respuesta=request.form["respuesta"]
     for x in request.form:
         ticket_tipo_respuesta=x
@@ -89,7 +95,15 @@ def responder_ticket(ticket_id):
                 i["estado"]="respondido"
     with open("tickets.json","w") as archivo2:
         json.dump(Tickets,archivo2,indent=4)
-    return "responder ticket"
+
+    flash("Su respuesta ha sido enviada!")    
+    return redirect(f'/pagina_docentes/{carrera}/{usuario}')
+
+
+def pagina_no_encontrada(error):
+    return redirect(url_for("inicio_de_sesion"))
+
 
 if __name__ == "__main__":
+    app.register_error_handler(404,pagina_no_encontrada)
     app.run(debug=True)
