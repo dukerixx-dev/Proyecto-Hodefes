@@ -1,3 +1,12 @@
 [
-  
+    {
+        "id": 1,
+        "estudiante": "Pepe Torres",
+        "docente": "Lucas Almonacid",
+        "carrera": "Ingenieria Civil Industrial",
+        "tipo": "Duda",
+        "contenido": "saludos profesor lucas, quisiera saber si en el c\u00f3digo puedo usar booleanos para la prueba del lunes",
+        "respuesta": "ok hazlo",
+        "estado": "respondido"
+    }
 ]

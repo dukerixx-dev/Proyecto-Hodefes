@@ -5,7 +5,16 @@
         "horario": "16:00 - 16:30",
         "part-time": 0,
         "pdf":"https://horarios.ulagos.cl/Global/index.php?docente=12309317&sede=2028",
-        "asignatura":"Matemáticas"
+        "asignatura":"Matematicas"
+    },
+
+    {    
+        "nombre":"Lucas Almonacid",
+        "lugar": " En las salas que está haciendo clases",
+        "horario": "Solo despues de clases: 5-10 min",
+        "part-time": "Part-time",
+        "pdf":"https://horarios.ulagos.cl/Global/index.php?docente=20312945&sede=2028",
+        "asignatura":"Programacion"
     },
 
     {    
@@ -13,7 +22,8 @@
         "lugar": "En la oficina cerca del casino",
         "horario": "12:00 - 14:00",
         "part-time": 0,
-        "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php"
+        "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php",
+        "asignatura":"Quimica"
     },
 
     {    
@@ -21,7 +31,8 @@
         "lugar": "Solo despues de sus clases correspondientes",
         "horario": "5 - 10 Minutos",
         "part-time": "Part-time",
-        "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php"
+        "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php",
+        "asignatura":"Biologia"
     },
 
     {    
@@ -29,7 +40,8 @@
         "lugar": "En la oficina 203 arriba de la sala de estudios",
         "horario": "16:00 - 17:00",
         "part-time": 0,
-        "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php"
+        "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php",
+        "asignatura":"Habilidades Comunicativas"
     },
 
     {    
@@ -37,7 +49,8 @@
         "lugar": "La oficina 202 ubicada arriba de la biblioteca",
         "horario": "13:00 - 14:00",
         "part-time": 0,
-        "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php"
+        "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php",
+        "asignatura":"Matematicas"
     },
 
     {    
@@ -45,7 +58,8 @@
         "lugar": " En las salas que está haciendo clases",
         "horario": "Solo despues de clases: 5-10 min",
         "part-time": "Part-time",
-        "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php"
+        "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php",
+        "asignatura":"Fisica"
     },
 
     {    
@@ -53,7 +67,8 @@
         "lugar": " En las salas que está haciendo clases",
         "horario": "Solo despues de clases: 5-10 min",
         "part-time": "Part-time",
-        "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php"
+        "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php",
+        "asignatura":"Quimica"
     }  
 
 ]
