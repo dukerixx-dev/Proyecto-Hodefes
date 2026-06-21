@@ -5,39 +5,12 @@
     <title>HODEFES ඞ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{url_for('static',filename='css/pagina horarios.css')}}"/>
-    <style>
-        .modal_fondo{
-            display: none;
-            position: fixed;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
-            padding-left: 35%;
-            padding-top: 5%;
-
-            background-color: rgba(0,0,0,0.5);
-
-
-
-        }
-
-        .modal{
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 350px;
-            position:absolute;
-        }
-    </style>    
 </head>
 
 <body id="body">
      <header>
             <a class="enlace" href="http://127.0.0.1:5000/pagina_horarios/"> HODEFES</a>
-        </header>
+    </header>
         <nav>
             <form> 
                 <i class="fa-solid fa-filter"></i> 
@@ -47,7 +20,7 @@
         </nav>
         {% with mensajes = get_flashed_messages() %}
             {% if mensajes %}
-                <div id="modal-exito" class="modal">
+                <div id="modal-exito" class="modal_flash">
                     <div class="modal-contenido">
                         <p>{{ mensajes[0] }}</p>
                     </div>
@@ -71,7 +44,8 @@
 
                         <button onclick="abrirmodal('{{ loop.index }}')"> 
                             Sistema de consulta
-                        </button>  
+                        </button> 
+                    </article> 
                         <!-- cuadro del sistema de consultas -->
                         <div class ="modal_fondo" id="modal-{{ loop.index }}">
                             <div class="modal">
@@ -81,24 +55,28 @@
                                 </button>
                                 <h2>Ha entrado al sistema de consultas, ¿Que quiere hacer con {{profesor.nombre}}? </h2>
                                 <!-- enviar consulta presencial -->
-                                <form action="/enviar_ticket/{{carrera}}/{{usuario}}/{{profesor.nombre}}" method="POST">
-                                    <button type="submit" name="Presencial">
-                                        Consulta Presencial
-                                    </button>
-                                </form>
+                                 <button onclick="texto_click('presencial-{{ loop.index }}')" class="texto_click"> 
+                                    Escribir detalles de la reunion
+                                </button>
+                                    <div class="contenido_duda" id="presencial-{{ loop.index }}">
+                                        <form action="/enviar_ticket/{{carrera}}/{{usuario}}/{{profesor.nombre}}" method="POST">
+                                            <input type="text" placeholder="Escriba aqui los detalles de la reunion" name="Presencial" >
+                                            <input type="submit">
+                                        </form>
+                                    </div>
                                 <!-- enviar Duda -->
-                                <button onclick="texto_click()" class="texto_click"> 
+                                <button onclick="texto_click('duda-{{ loop.index }}')" class="texto_click"> 
                                     Escribir Duda 
                                 </button>
-                                    <div class="contenido_duda" id="contenido_duda">
+                                    <div class="contenido_duda" id="duda-{{ loop.index }}">
                                         <form action="/enviar_ticket/{{carrera}}/{{usuario}}/{{profesor.nombre}}" method="POST">
                                             <input type="text" placeholder="Escriba aqui su duda" name="Duda" >
                                             <input type="submit">
                                         </form>
                                     </div>
-
                                 <!-- mostrar tickets enviados y respondidos-->
-                                <h2> Tickets enviados </h2>
+                                <div class="tickets_enviados">
+                                    <h2> Tickets enviados </h2>
                                     <h3> Pendientes: </h3>
                                     {% for ticket in Tickets %}
                                         {% if ticket.estudiante == usuario and ticket.docente == profesor.nombre and ticket.estado == "pendiente" %}
@@ -118,23 +96,23 @@
                                             <p> {{ticket.respuesta}} </p>
                                         {% endif %}
                                     {% endfor %}
+                                </div>
                             </div>
                         </div>
-                    </article>
                 {% endfor %}
             </div>
         </section>
     </div>
     <script>
             function abrirmodal(id){
-                document.getElementById("modal-"+id).style.display = "block";
+                document.getElementById("modal-"+id).style.display = "flex";
 
             }
             function cerrarmodal(id){
                 document.getElementById("modal-"+id).style.display = "none";
             }
-            function texto_click(){        
-                let contenido = document.getElementById("contenido_duda");
+            function texto_click(id){       
+                let contenido = document.getElementById(id);
 
                 if(contenido.style.display == "block"){
                     contenido.style.display = "none";
