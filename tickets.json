@@ -1,20 +1,32 @@
 [
     {
         "id": 1,
-        "estudiante": "pepe.torres",
-        "docente": "Hector Villarroel",
-        "tipo": "ticket duda",
-        "contenido": "heloooo",
+        "estudiante": "Pepe Torres",
+        "docente": "Joaquin Reyes",
+        "carrera": "Ingenieria Civil Industrial",
+        "tipo": "Presencial",
+        "contenido": "",
         "respuesta": "",
         "estado": "pendiente"
     },
     {
         "id": 2,
-        "estudiante": "pepe.torres",
-        "docente": "Javiera Palacios",
-        "tipo": "ticket presencial",
-        "contenido": "",
+        "estudiante": "Carl Johnson",
+        "docente": "Joaquin Reyes",
+        "carrera": "Ingenieria Civil en Inform\u00c3\u00a1tica",
+        "tipo": "Duda",
+        "contenido": "holaaa",
         "respuesta": "",
         "estado": "pendiente"
+    },
+    {
+        "id": 3,
+        "estudiante": "Carl Johnson",
+        "docente": "Pepe Rojaz",
+        "carrera": "Ingenieria Civil en Inform\u00c3\u00a1tica",
+        "tipo": "Duda",
+        "contenido": "prueba del modal",
+        "respuesta": "prueba de respuesta otra vez",
+        "estado": "respondido"
     }
 ]

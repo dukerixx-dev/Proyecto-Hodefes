@@ -5,6 +5,33 @@
     <title>HODEFES ඞ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{url_for('static',filename='css/pagina horarios.css')}}"/>
+    <style>
+        .modal_fondo{
+            display: none;
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+            padding-left: 35%;
+            padding-top: 5%;
+
+            background-color: rgba(0,0,0,0.5);
+
+
+
+        }
+
+        .modal{
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+            position:absolute;
+        }
+    </style>    
 </head>
 
 <body id="body">
@@ -22,7 +49,7 @@
         <!--cuadros de informacion de los docentes -->
         <section id="contenido">
             <div class="horarios">
-                {% for profesor in datos %}
+                {% for profesor in profes %}
                     <article class="article"> 
                         <h1 id="nombre_profesor"> {{profesor.nombre}} </h1>
                         <h3> Lugares donde se puede encontrar:</h3>
@@ -33,14 +60,20 @@
                             </ul>
                         <a href={{profesor.pdf}} >PDF</a> 
 
-                        <button onclick="abrirmodal()"> Sistema de consulta</button>  
+                        <button onclick="abrirmodal('{{ loop.index }}')"> 
+                            Sistema de consulta
+                        </button>  
                         <!-- cuadro del sistema de consultas -->
-                        <div class ="modal_fondo" id="modal">
+                        <div class ="modal_fondo" id="modal-{{ loop.index }}">
                             <div class="modal">
-                                <h2>Ha entrado al sistema de consultas, ¿Que quiere hacer? {{profesor.nombre}}</h2>
+                                <!-- cerrar sistema de consultas -->
+                                <button onclick="cerrarmodal('{{ loop.index }}')">
+                                    X
+                                </button>
+                                <h2>Ha entrado al sistema de consultas, ¿Que quiere hacer con {{profesor.nombre}}? </h2>
                                 <!-- enviar consulta presencial -->
-                                <form action="/enviar_ticket/{{usuario}}/{{profesor.nombre}}" method="POST">
-                                    <button type="submit" name="ticket presencial">
+                                <form action="/enviar_ticket/{{carrera}}/{{usuario}}/{{profesor.nombre}}" method="POST">
+                                    <button type="submit" name="Presencial">
                                         Consulta Presencial
                                     </button>
                                 </form>
@@ -49,8 +82,8 @@
                                     Escribir Duda 
                                 </button>
                                     <div class="contenido_duda" id="contenido_duda">
-                                        <form action="/enviar_ticket/{{usuario}}/{{profesor.nombre}}" method="POST">
-                                            <input type="text" placeholder="Escriba aqui su duda" name="ticket duda">
+                                        <form action="/enviar_ticket/{{carrera}}/{{usuario}}/{{profesor.nombre}}" method="POST">
+                                            <input type="text" placeholder="Escriba aqui su duda" name="Duda" >
                                             <input type="submit">
                                         </form>
                                     </div>
@@ -61,25 +94,19 @@
                                     <!-- para despues-->
                                     <h4> Respondidos: </h4>
                                     <!-- para despues-->
-                                <!-- cerrar sistema de consultas -->
-                                <button onclick="cerrarmodal()">
-                                    cerrar
-                                </button>
                             </div>
                         </div>
                     </article>
                 {% endfor %}
-
+            </div>
             
         <script>
-            function abrirmodal(){
-                document.getElementById("modal").style.display = "block";
+            function abrirmodal(id){
+                document.getElementById("modal-"+id).style.display = "block";
 
             }
-            function cerrarmodal(){
-                document.getElementById("modal").style.display = "none";
-                
-
+            function cerrarmodal(id){
+                document.getElementById("modal-"+id).style.display = "none";
             }
             function texto_click(){        
                 let contenido = document.getElementById("contenido_duda");

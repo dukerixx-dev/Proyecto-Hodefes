@@ -5,25 +5,120 @@
     <title> HODEFES Docentes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{url_for('static',filename='css/pagina docentes.css')}}"/>
+    <style>
+        .modal_fondo{
+            display: none;
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+            padding-left: 35%;
+            padding-top: 5%;
+
+            background-color: rgba(0,0,0,0.5);
+
+
+
+        }
+
+        .modal{
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+            position:absolute;
+        }
+    </style>    
 </head>
 
 <body id="body">
     <header>
         <a class="enlace" href="http://127.0.0.1:5000/pagina_horarios/"> HODEFES</a>
     </header>
-    <nav>
-    </nav>
     <div id="container">
         <section id="contenido">
             <h1> Tickets Pendientes </h1>
-            
-                
-            <h1> Tickets Resueltos </h1>
+            {% for ticket in Tickets%}
+                {% if ticket.docente == usuario and ticket.estado == "pendiente" %}
+                    <h4>Estudiante: {{ticket.estudiante}}</h4>
+                    <h4> Tipo de Ticket: {{ticket.tipo}}</h4>
+                    <h4> Carrera: {{ticket.carrera}}</h4>
+                    <button onclick="abrirmodal('{{ ticket.id }}')">
+                        Ver ticket
+                    </button>
+                    <br>
+                    <!--Modal de los tickets-->
+                    <div class="modal_fondo" id="modal-{{ ticket.id }}">
+                        <div class="modal">
+                            <button onclick="cerrarmodal('{{ ticket.id }}')">
+                                x
+                            </button>
+                            <h2> {{ ticket.estudiante }} </h2>
+                            <h4> {{ ticket.carrera }} </h4>
+                            <h4> {{ ticket.tipo }} </h4>
+                            <p> {{ticket.contenido}} </p>
+                            <p> {{ticket.id}} </p>
+                            <form action="/responder_ticket/{{ticket.id}}" method="POST">
+                                <input type="hidden" name="id" id="ticketId">
+                                <textarea name="respuesta"></textarea>
+                                <button type="submit" name="coordinar_reunion">
+                                    Coordinar reunion breve
+                                </button>
+                                <button type="submit" name="enviar_resuelto">
+                                    Enviar y marcar como hecho
+                                </button>
+                                <button type="submit" name="enviar_pendiente">
+                                    Enviar y marcar como pendiente
+                                </button>
+                            </form>
+                        </div>
+                    </div>   
+                {% endif %}
+            {% endfor %}
+            <h1> Tickets Respondidos </h1>
+            {% for ticket in Tickets%}
+                {% if ticket.docente == usuario and ticket.estado == "respondido" %}
+                        <h4>Estudiante: {{ticket.estudiante}}</h4>
+                        <h4> Tipo de Ticket: {{ticket.tipo}}</h4>
+                        <h4> Carrera: {{ticket.carrera}}</h4>
+                        <button onclick="abrirmodal('{{ ticket.id }}')">
+                            Ver ticket
+                        </button>
+                        <br>
+                        <!--Modal de los tickets-->
+                        <div class="modal_fondo" id="modal-{{ ticket.id }}">
+                            <div class="modal">
+                                <button onclick="cerrarmodal('{{ ticket.id }}')">
+                                    x
+                                </button>
+                                <h2> {{ ticket.estudiante }} </h2>
+                                <h4> {{ ticket.carrera }} </h4>
+                                <h4> {{ ticket.tipo }} </h4>
+                                <h4> contenido ticket </h4>
+                                <p> {{ticket.contenido}} </p>
+                                <h4> respuesta </h4>
+                                <p> {{ticket.respuesta}} </p>
 
+                            </div>
+                        </div>    
+                {% endif %}
+            {% endfor %}
+        <script>
+            function abrirmodal(id){
+                document.getElementById("modal-"+id).style.display = "block";
 
+            }
+            function cerrarmodal(id){
+                document.getElementById("modal-"+id).style.display = "none";
+            }
+        </script>
         </section>
     </div>
 </body>
+
 <!--
 <h1> Tickets Pendientes </h1>
 <div>

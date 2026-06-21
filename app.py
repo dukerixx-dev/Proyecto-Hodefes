@@ -20,25 +20,25 @@ def verificar_inicio_de_sesion():
 
     for i in inicio_sesion:
         if correo == i["correo"] and contrasena == i["contrasena"]:
+            nombre_usuario= i["usuario"]
+            carrera=i["carrera"]
             #subcadena desde el final del correo hasta el arroba
             if i["correo"][-17:]=="alumnos.ulagos.cl":
-                nombre_usuario= i["correo"][:-18]
-                return redirect(f"/pagina_horarios/{nombre_usuario}")
+                return redirect(f"/pagina_horarios/{carrera}/{nombre_usuario}")
             else:   
-                nombre_usuario= i["correo"][:-10]
-                return redirect(f"pagina_docentes/{nombre_usuario}")
+                return redirect(f"pagina_docentes/{carrera}/{nombre_usuario}")
     return render_template("pagina inicio sesion.html ")
 
 
 #Pagina de horarios
-@app.route('/pagina_horarios/<usuario>')
-def pagina_horarios(usuario):
+@app.route('/pagina_horarios/<carrera>/<usuario>')
+def pagina_horarios(carrera,usuario):
     with open("profes.json","r") as archivo:
         profes=json.load(archivo)
-    return render_template('pagina horarios.html',datos=profes,usuario=usuario)
+    return render_template('pagina horarios.html',profes=profes,usuario=usuario,carrera=carrera)
 
-@app.route('/enviar_ticket/<usuario>/<docente>', methods=["POST"])
-def enviar_ticket(usuario,docente):
+@app.route('/enviar_ticket/<carrera>/<usuario>/<docente>', methods=["POST"])
+def enviar_ticket(carrera,usuario,docente):
     #conseguir el tipo de ticket
     for x in request.form:
         tipo_ticket=x
@@ -49,6 +49,7 @@ def enviar_ticket(usuario,docente):
         "id":len(Tickets)+1,
         "estudiante":usuario,
         "docente":docente,
+        "carrera":carrera,
         "tipo": tipo_ticket,
         "contenido":contenido_ticket,
         "respuesta":"",
@@ -68,10 +69,27 @@ def invitado():
 
 
 #Pagina de docentes
-@app.route('/pagina_docentes/<usuario>')
-def pagina_docentes(usuario):
-    return render_template('pagina docentes.html')
+@app.route('/pagina_docentes/<carrera>/<usuario>')
+def pagina_docentes(carrera,usuario):
+    with open("tickets.json","r") as archivo:
+        Tickets=json.load(archivo)
+    return render_template('pagina docentes.html', Tickets=Tickets, usuario=usuario)
 
+@app.route('/responder_ticket/<int:ticket_id>', methods=["POST"])
+def responder_ticket(ticket_id):
+    respuesta=request.form["respuesta"]
+    for x in request.form:
+        ticket_tipo_respuesta=x
+    with open("tickets.json","r") as archivo:
+        Tickets=json.load(archivo)
+    for i in Tickets:
+        if i["id"]==ticket_id:
+            i["respuesta"]=respuesta
+            if ticket_tipo_respuesta == "coordinar_reunion" or ticket_tipo_respuesta == "enviar_resuelto":
+                i["estado"]="respondido"
+    with open("tickets.json","w") as archivo2:
+        json.dump(Tickets,archivo2,indent=4)
+    return "responder ticket"
 
 if __name__ == "__main__":
-        app.run(debug=True)
+    app.run(debug=True)

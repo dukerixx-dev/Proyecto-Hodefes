@@ -1,17 +1,100 @@
 [
+    { 
+        "usuario":"admin",
+        "carrera":"admin",
+        "correo": "admin.@ulagos.cl",
+        "contrasena": "1234"
+    },
+
     {
+        "usuario":"Pepe Torres",
+        "carrera":"Ingenieria Civil Industrial",
         "correo": "pepe.torres@alumnos.ulagos.cl",
+        "contrasena":"1234"
+    },
+
+    {
+        "usuario":"Rodrigo Santos",
+        "carrera":"Ingenieria Civil Eléctrica",
+        "correo": "rodrigo.santos@alumnos.ulagos.cl",
+        "contrasena":"1234"
+    },
+
+    {
+        "usuario":"Carl Johnson",
+        "carrera":"Ingenieria Civil en Informática",
+        "correo": "carl.johnson@alumnos.ulagos.cl",
+        "contrasena":"1234"
+    },
+
+    {
+        "usuario":"Matias Johnson",
+        "carrera":"Química Farmaceutica",
+        "correo": "Matias.johnson@alumnos.ulagos.cl",
+        "contrasena":"1234"
+    },
+
+    {
+        "usuario":"Sofia Sanhueza",
+        "carrera":"Kinesiología",
+        "correo": "sofia.sanhueza@alumnos.ulagos.cl",
         "contrasena":"1234"
     },
     
     {
+        "usuario":"Lucas Almonacid",
+        "_comentario":"se usará ¨carrera¨ como asignatura a los docentes",
+        "carrera": "Programacíon",
         "correo": "lucas.almonacid@ulagos.cl",
         "contrasena": "1234"
     },
 
     { 
-        "correo": "admin.@ulagos.cl",
+        "usuario":"Camila Soto",
+        "carrera": "Biología",
+        "correo": "camila.soto@ulagos.cl",
         "contrasena": "1234"
+    },
 
+    { 
+        "usuario":"Joaquin Reyes",
+        "carrera": "Matemáticas",
+        "correo": "joaquin.reyes@ulagos.cl",
+        "contrasena": "1234"
+    },
+
+    { 
+        "usuario":"Hector Villaroel",
+        "carrera": "Física",
+        "correo": "hector.villaroel@ulagos.cl",
+        "contrasena": "1234"
+    },
+
+    { 
+        "usuario":"Javier Torres",
+        "carrera": "Habilidades comunicatívas",
+        "correo": "javier.torres@ulagos.cl",
+        "contrasena": "1234"
+    },
+
+    { 
+        "usuario":"Javiera Palacios",
+        "carrera": "Química",
+        "correo": "javiera.palacios@ulagos.cl",
+        "contrasena": "1234"
+    },
+
+    { 
+        "usuario":"Pepe Rojaz",
+        "carrera": "Matemáticas",
+        "correo": "pepe.rojaz@ulagos.cl",
+        "contrasena": "1234"
+    },
+
+    { 
+        "usuario":"Gilberto Diaz",
+        "carrera": "Física",
+        "correo": "gilberto.diaz@ulagos.cl",
+        "contrasena": "1234"
     }
 ]
