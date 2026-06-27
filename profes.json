@@ -3,7 +3,7 @@
         "nombre":"Alejandro Segovia",
         "lugar": "La oficina ubicada arriba de la sala de estudio circular",
         "horario": "16:00 - 16:30",
-        "part-time": 0,
+        "part-time": "Full_time",
         "pdf":"https://horarios.ulagos.cl/Global/index.php?docente=12309317&sede=2028",
         "asignatura":"Matematicas"
     },
@@ -21,7 +21,7 @@
         "nombre":"Camila Soto",
         "lugar": "En la oficina cerca del casino",
         "horario": "12:00 - 14:00",
-        "part-time": 0,
+        "part-time": "Full_time",
         "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php",
         "asignatura":"Quimica"
     },
@@ -39,7 +39,7 @@
         "nombre":"Javier Torres",
         "lugar": "En la oficina 203 arriba de la sala de estudios",
         "horario": "16:00 - 17:00",
-        "part-time": 0,
+        "part-time": "Full_time",
         "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php",
         "asignatura":"Habilidades Comunicativas"
     },
@@ -48,7 +48,7 @@
         "nombre":"Javiera Palacios",
         "lugar": "La oficina 202 ubicada arriba de la biblioteca",
         "horario": "13:00 - 14:00",
-        "part-time": 0,
+        "part-time": "Full_time",
         "pdf":"https://horarios.ulagos.cl/ptomontt/docentes.php",
         "asignatura":"Matematicas"
     },

@@ -8,5 +8,35 @@
         "contenido": "saludos profesor lucas, quisiera saber si en el c\u00f3digo puedo usar booleanos para la prueba del lunes",
         "respuesta": "ok hazlo",
         "estado": "respondido"
+    },
+    {
+        "id": 2,
+        "estudiante": "Pepe Torres",
+        "docente": "Alejandro Segovia",
+        "carrera": "Ingenieria Civil Industrial",
+        "tipo": "Duda",
+        "contenido": "hola profe tengo una duda con esto",
+        "respuesta": "ok eso se resuelve asi ....",
+        "estado": "respondido"
+    },
+    {
+        "id": 3,
+        "estudiante": "Pepe Torres",
+        "docente": "Lucas Almonacid",
+        "carrera": "Ingenieria Civil Industrial",
+        "tipo": "Presencial",
+        "contenido": "nijdnua",
+        "respuesta": "",
+        "estado": "pendiente"
+    },
+    {
+        "id": 4,
+        "estudiante": "Carl Johnson",
+        "docente": "Alejandro Segovia",
+        "carrera": "Ingenieria Civil en Inform\u00c3\u00a1tica",
+        "tipo": "Duda",
+        "contenido": "hola",
+        "respuesta": "",
+        "estado": "pendiente"
     }
 ]

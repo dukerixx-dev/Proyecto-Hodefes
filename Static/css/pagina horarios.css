@@ -1,3 +1,4 @@
+/*Todo el código de este archivo se generó con IA*/
 *{
     margin: 0;
     padding: 0;
@@ -126,6 +127,14 @@ input[type="submit"]{
     cursor: pointer;
     transition: 0.2s;
     margin-top: 12px;
+}
+
+#boton_presencial{
+    background-color: rgb(233, 194, 40);
+}
+
+#boton_duda{
+    background-color: #259ceb;
 }
 
 button:hover,

@@ -4,10 +4,6 @@ import json
 app=Flask(__name__)
 app.secret_key = "clave"
 
-"""
-DEBE DE ESTAR DOCUMENTADO
-"""
-
 #Inicio sesión
 @app.get('/')
 def inicio_de_sesion():

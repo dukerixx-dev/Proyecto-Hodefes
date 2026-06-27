@@ -2,7 +2,7 @@
 <html> 
 <head> 
     <meta charset="utf-8"/>
-    <title>HODEFES ඞ</title>
+    <title>HODEFES </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{url_for('static',filename='css/pagina horarios.css')}}"/>
 </head>
@@ -56,18 +56,18 @@
                                 </button>
                                 <h2>Ha entrado al sistema de consultas, ¿Que quiere hacer con {{profesor.nombre}}? </h2>
                                 <!-- enviar consulta presencial -->
-                                 <button onclick="texto_click('presencial-{{ loop.index }}')" class="texto_click"> 
-                                    Escribir detalles de la reunion
+                                 <button onclick="texto_click('presencial-{{ loop.index }}')" class="texto_click" id="boton_presencial"> 
+                                    <h3>Presencial</h3>
                                 </button>
                                     <div class="contenido_duda" id="presencial-{{ loop.index }}">
                                         <form action="/enviar_ticket/{{carrera}}/{{usuario}}/{{profesor.nombre}}" method="POST">
                                             <input type="text" placeholder="Escriba aqui los detalles de la reunion" name="Presencial" >
-                                            <input type="submit">
+                                            <input type="submit" >
                                         </form>
                                     </div>
                                 <!-- enviar Duda -->
-                                <button onclick="texto_click('duda-{{ loop.index }}')" class="texto_click"> 
-                                    Escribir Duda 
+                                <button onclick="texto_click('duda-{{ loop.index }}')" class="texto_click" id="boton_duda"> 
+                                    <h3>Escribir Duda </h3>
                                 </button>
                                     <div class="contenido_duda" id="duda-{{ loop.index }}">
                                         <form action="/enviar_ticket/{{carrera}}/{{usuario}}/{{profesor.nombre}}" method="POST">
