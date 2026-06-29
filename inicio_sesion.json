@@ -40,6 +40,13 @@
         "correo": "sofia.sanhueza@alumnos.ulagos.cl",
         "contrasena":"1234"
     },
+
+    {
+        "usuario":"Belen Vega",
+        "carrera":"Fonoaudiologia",
+        "correo": "belen.vega@alumnos.ulagos.cl",
+        "contrasena":"1234"
+    },
     
     {
         "usuario":"Lucas Almonacid",
@@ -51,7 +58,7 @@
 
     { 
         "usuario":"Camila Soto",
-        "carrera": "Biología",
+        "carrera": "Quimica",
         "correo": "camila.soto@ulagos.cl",
         "contrasena": "1234"
     },
@@ -64,9 +71,9 @@
     },
 
     { 
-        "usuario":"Hector Villaroel",
-        "carrera": "Física",
-        "correo": "hector.villaroel@ulagos.cl",
+        "usuario":"Hector Villarroel",
+        "carrera": "Biologia",
+        "correo": "hector.villarroel@ulagos.cl",
         "contrasena": "1234"
     },
 
@@ -79,21 +86,21 @@
 
     { 
         "usuario":"Javiera Palacios",
-        "carrera": "Química",
+        "carrera": "matematicas",
         "correo": "javiera.palacios@ulagos.cl",
         "contrasena": "1234"
     },
 
     { 
         "usuario":"Pepe Rojaz",
-        "carrera": "Matemáticas",
+        "carrera": "Fisica",
         "correo": "pepe.rojaz@ulagos.cl",
         "contrasena": "1234"
     },
 
     { 
         "usuario":"Gilberto Diaz",
-        "carrera": "Física",
+        "carrera": "Quimica",
         "correo": "gilberto.diaz@ulagos.cl",
         "contrasena": "1234"
     }

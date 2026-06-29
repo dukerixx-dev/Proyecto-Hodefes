@@ -38,5 +38,25 @@
         "contenido": "hola",
         "respuesta": "",
         "estado": "pendiente"
+    },
+    {
+        "id": 5,
+        "estudiante": "Belen Vega",
+        "docente": "Hector Villarroel",
+        "carrera": "Fonoaudiologia",
+        "tipo": "Duda",
+        "contenido": "como se hacen los bebes?",
+        "respuesta": "googlealo ",
+        "estado": "respondido"
+    },
+    {
+        "id": 6,
+        "estudiante": "Belen Vega",
+        "docente": "Lucas Almonacid",
+        "carrera": "Fonoaudiologia",
+        "tipo": "Presencial",
+        "contenido": "",
+        "respuesta": "",
+        "estado": "pendiente"
     }
 ]
